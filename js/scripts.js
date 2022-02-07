@@ -306,11 +306,17 @@ window.onload = function () {
                 descTitle.textContent = `${data[searchItem].year + " " + data[searchItem].month + " " + data[searchItem].day}`;
                 time.textContent = `${data[searchItem].hour}`;
                 description.textContent = data[searchItem].description;
+                //modal window
+                descTitleModal.textContent = `${data[searchItem].year + " " + data[searchItem].month + " " + data[searchItem].day}`;
+                timeModal.textContent = `${data[searchItem].hour}`;
+                descriptionModal.textContent = data[searchItem].description;
                 if (!data[searchItem].image) {
                     imgContainer.style.display = "none";
                 } else {
                     imgContainer.style.display = "block";
                     image.src = `./static/${data[searchItem].image}`;
+                    imageModal.src = `./static/${data[searchItem].image}`;
+                    imageModal.alt = `${data[searchItem].image}`;
                 };
             });
 
