@@ -1,17 +1,17 @@
 //input data
 let information = [
-    { year: 2014, month: "May", day: 28, hour: "12:30", description: "lorem ipsum", image: "first.jpg" },
-    { year: 2016, month: "January", day: 08, hour: "12:00", description: " Not lorem ipsum", image: "second.jpg" },
-    { year: 2016, month: "January", day: 08, hour: "12:10", description: " Not lorem ipsum", image: "second.jpg" },
-    { year: 2016, month: "January", day: 08, hour: "12:20", description: " Not lorem ipsum", image: "second.jpg" },
-    { year: 2012, month: "October", day: 14, hour: "12:20", description: "lorem ipsum but not", image: "third.jpg" },
-    { year: 2015, month: "December", day: 01, hour: "12:40", description: "lorem ipsum perma sut", image: "fourth.png" },
+    { year: 2014, month: "May", day: 28, hour: "12:30", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "first.jpg" },
+    { year: 2016, month: "January", day: 08, hour: "12:00", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "second.jpg" },
+    { year: 2016, month: "January", day: 08, hour: "12:10", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "second.jpg" },
+    { year: 2016, month: "January", day: 08, hour: "12:20", description: "Lorem Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "second.jpg" },
+    { year: 2012, month: "October", day: 14, hour: "12:20", description: "Lorem ipsum dolor sit amet consectetur adippit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "third.jpg" },
+    { year: 2015, month: "December", day: 01, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "fourth.png" },
     { year: 2018, month: "March", day: 22, hour: "13:10", description: "lorem ipsum perma sut terra mur", image: "fifth.jpg" },
-    { year: 2014, month: "February", day: 24, hour: "12:40", description: "lorem ipsum second", image: "sixth.jpg" },
-    { year: 2014, month: "February", day: 25, hour: "12:40", description: "lorem ipsum second", image: "" },
+    { year: 2014, month: "February", day: 24, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque, doloremquaerat laudantium iusto!", image: "sixth.jpg" },
+    { year: 2014, month: "February", day: 25, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "" },
     { year: 2014, month: "February", day: 25, hour: "12:30", description: "lorem ipsum second", image: "" },
-    { year: 2020, month: "June", day: 25, hour: "12:40", description: "lorem ipsum second", image: "" },
-    { year: 2020, month: "June", day: 25, hour: "12:45", description: "lorem ipsum second", image: "" },
+    { year: 2020, month: "June", day: 25, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus!", image: "" },
+    { year: 2020, month: "June", day: 25, hour: "12:45", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "" },
     { year: 2020, month: "June", day: 25, hour: "12:46", description: "lorem ipsum second", image: "" }
 ];
 // translate global data to local
@@ -37,6 +37,21 @@ window.onload = function () {
     image.src = `./static/${data[slideIndex].image}`;
     image.alt = `${data[slideIndex].image}`;
 
+    //modal variables
+    let descTitleModal = document.querySelector(".description-modal h3");
+    let timeModal = document.querySelector(".description-modal h4");
+    let descriptionModal = document.querySelector(".description-modal span");
+    let imgContainerModal = document.querySelector(".galleryModal .img");
+    let imageModal = document.querySelector(".galleryModal .img img");
+    let modalContainer = document.querySelector(".galleryModal");
+    let closeModal = document.querySelector(".close-modal");
+    descTitleModal.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
+    timeModal.textContent = `${data[slideIndex].hour}`;
+    descriptionModal.textContent = data[slideIndex].description;
+    imageModal.src = `./static/${data[slideIndex].image}`;
+    imageModal.alt = `${data[slideIndex].image}`;
+
+
     //current prev date and ivent in calendar variables
     let currentDate, calendarIvent;
     currentDate = document.querySelector(`.year${data[slideIndex].year} .${data[slideIndex].month} .day${data[slideIndex].day}`);
@@ -59,12 +74,19 @@ window.onload = function () {
             descTitle.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
             time.textContent = `${data[slideIndex].hour}`;
             description.textContent = data[slideIndex].description;
+            //modal 
+            descTitleModal.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
+            timeModal.textContent = `${data[slideIndex].hour}`;
+            descriptionModal.textContent = data[slideIndex].description;
             if (!data[slideIndex].image) {
                 imgContainer.style.display = "none";
             } else {
                 imgContainer.style.display = "block";
                 image.src = `./static/${data[slideIndex].image}`;
                 image.alt = `${data[slideIndex].image}`;
+                //modal
+                imageModal.src = `./static/${data[slideIndex].image}`;
+                imageModal.alt = `${data[slideIndex].image}`;
             }
             currentDate = document.querySelector(`.year${data[slideIndex].year} .${data[slideIndex].month} .day${data[slideIndex].day}`);
             currentDate.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -74,12 +96,19 @@ window.onload = function () {
             descTitle.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
             time.textContent = `${data[slideIndex].hour}`;
             description.textContent = data[slideIndex].description;
+            //modal 
+            descTitleModal.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
+            timeModal.textContent = `${data[slideIndex].hour}`;
+            descriptionModal.textContent = data[slideIndex].description;
             if (!data[slideIndex].image) {
                 imgContainer.style.display = "none";
             } else {
                 imgContainer.style.display = "block";
                 image.src = `./static/${data[slideIndex].image}`;
                 image.alt = `${data[slideIndex].image}`;
+                //modal
+                imageModal.src = `./static/${data[slideIndex].image}`;
+                imageModal.alt = `${data[slideIndex].image}`;
             }
             currentDate = document.querySelector(`.year${data[slideIndex].year} .${data[slideIndex].month} .day${data[slideIndex].day}`);
             currentDate.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -92,12 +121,19 @@ window.onload = function () {
             descTitle.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
             time.textContent = `${data[slideIndex].hour}`;
             description.textContent = data[slideIndex].description;
+            //modal 
+            descTitleModal.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
+            timeModal.textContent = `${data[slideIndex].hour}`;
+            descriptionModal.textContent = data[slideIndex].description;
             if (!data[slideIndex].image) {
                 imgContainer.style.display = "none";
             } else {
                 imgContainer.style.display = "block";
                 image.src = `./static/${data[slideIndex].image}`;
                 image.alt = `${data[slideIndex].image}`;
+                //modal
+                imageModal.src = `./static/${data[slideIndex].image}`;
+                imageModal.alt = `${data[slideIndex].image}`;
             }
             currentDate = document.querySelector(`.year${data[slideIndex].year} .${data[slideIndex].month} .day${data[slideIndex].day}`);
             currentDate.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -106,31 +142,24 @@ window.onload = function () {
             descTitle.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
             time.textContent = `${data[slideIndex].hour}`;
             description.textContent = data[slideIndex].description;
+            //modal 
+            descTitleModal.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
+            timeModal.textContent = `${data[slideIndex].hour}`;
+            descriptionModal.textContent = data[slideIndex].description;
             if (!data[slideIndex].image) {
                 imgContainer.style.display = "none";
             } else {
                 imgContainer.style.display = "block";
                 image.src = `./static/${data[slideIndex].image}`;
                 image.alt = `${data[slideIndex].image}`;
+                //modal
+                imageModal.src = `./static/${data[slideIndex].image}`;
+                imageModal.alt = `${data[slideIndex].image}`;
             }
             currentDate = document.querySelector(`.year${data[slideIndex].year} .${data[slideIndex].month} .day${data[slideIndex].day}`);
             currentDate.scrollIntoView({ block: "center", behavior: "smooth" });
         }
     });
-
-    //modal variables
-    let descTitleModal = document.querySelector(".description-modal h3");
-    let timeModal = document.querySelector(".description-modal h4");
-    let descriptionModal = document.querySelector(".description-modal span");
-    let imgContainerModal = document.querySelector(".galleryModal .img");
-    let imageModal = document.querySelector(".galleryModal .img img");
-    let modalContainer = document.querySelector(".galleryModal");
-    let closeModal = document.querySelector(".close-modal");
-    descTitleModal.textContent = `${data[slideIndex].year + " " + data[slideIndex].month + " " + data[slideIndex].day}`;
-    timeModal.textContent = `${data[slideIndex].hour}`;
-    descriptionModal.textContent = data[slideIndex].description;
-    imageModal.src = `./static/${data[slideIndex].image}`;
-    imageModal.alt = `${data[slideIndex].image}`;
 
     //open - close modal
     imgContainer.addEventListener("click", function () {
