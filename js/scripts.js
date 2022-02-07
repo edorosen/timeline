@@ -9,9 +9,9 @@ let information = [
     { year: 2018, month: "March", day: 22, hour: "13:10", description: "lorem ipsum perma sut terra mur", image: "fifth.jpg" },
     { year: 2014, month: "February", day: 24, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque, doloremquaerat laudantium iusto!", image: "sixth.jpg" },
     { year: 2014, month: "February", day: 25, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "" },
-    { year: 2014, month: "February", day: 25, hour: "12:30", description: "lorem ipsum second", image: "" },
+    { year: 2014, month: "February", day: 25, hour: "12:30", description: "lorem ipsum second", image: "third.jpg" },
     { year: 2020, month: "June", day: 25, hour: "12:40", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus!", image: "" },
-    { year: 2020, month: "June", day: 25, hour: "12:45", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "" },
+    { year: 2020, month: "June", day: 25, hour: "12:45", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat suscipit natus placeataperiam esse nam cumque voluptatibus fugit itaque quam nesciunt nisi, minima sit aliquid, doloremquaerat laudantium iusto!", image: "fourth.png" },
     { year: 2020, month: "June", day: 25, hour: "12:46", description: "lorem ipsum second", image: "" }
 ];
 // translate global data to local
